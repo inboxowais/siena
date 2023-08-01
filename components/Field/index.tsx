@@ -13,7 +13,7 @@ type FieldProps = {
     placeholder?: string;
     required?: boolean;
     icon?: string;
-    borderRadiusNone? : String;
+    borderRadiusNone? : Boolean;
 };
 
 const Field = ({
