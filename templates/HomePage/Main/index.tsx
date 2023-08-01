@@ -128,8 +128,11 @@ const Main = ({ }: MainProps) => {
 
                                 placeholder="Write me a post about the sun"
                                 borderRadiusNone={true}
-                                noHoverEffect={true}
+                                // noHoverEffect={true}
                                 value={""}
+                                onChange={() => {
+                                    
+                                }}
                                 // onChange={(e: any) => setBio(e.target.value)}
                                 textarea
                                 required
