@@ -13,6 +13,7 @@ type FieldProps = {
     placeholder?: string;
     required?: boolean;
     icon?: string;
+    borderRadiusNone? : String;
 };
 
 const Field = ({
@@ -28,7 +29,7 @@ const Field = ({
     required,
     icon,
     borderRadiusNone,
-    noHoverEffect
+    
 }: FieldProps) => {
     const handleKeyDown = (event: any) => {
         const remainingChars = 880 - value.length;
