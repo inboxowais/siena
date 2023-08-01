@@ -11,7 +11,7 @@ type MenuType = {
 type MenuProps = {
     className?: string;
     items: MenuType[];
-    fontSizeSmall:Boolean;
+    fontSizeSmall?:Boolean;
 };
 
 
