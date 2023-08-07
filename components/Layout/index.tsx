@@ -28,8 +28,7 @@ const Layout = ({
     const [visibleRightSidebar, setVisibleRightSidebar] =
         useState<boolean>(false);
 
-    const [showRightSideBar, setShowRightSidebar] =
-        useState<boolean>(false);
+    const [showRightSideBar, setShowRightSidebar] = useState(false);
 
     const isDesktop = useMediaQuery({
         query: "(max-width: 1179px)",
