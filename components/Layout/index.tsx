@@ -28,6 +28,9 @@ const Layout = ({
     const [visibleRightSidebar, setVisibleRightSidebar] =
         useState<boolean>(false);
 
+    const [showRightSideBar, setShowRightSidebar] =
+        useState<boolean>(false);
+
     const isDesktop = useMediaQuery({
         query: "(max-width: 1179px)",
     });
@@ -49,13 +52,12 @@ const Layout = ({
                 <title>Siena</title>
             </Head>
             <div
-                className={`pr-6 bg-n-7 md:p-0 md:bg-n-1 dark:md:bg-n-6 md:overflow-hidden ${
-                    visibleSidebar
-                        ? "pl-24 md:pl-0"
-                        : smallSidebar
+                className={`pr-6 bg-n-7 md:p-0 md:bg-n-1 dark:md:bg-n-6 md:overflow-hidden ${visibleSidebar
+                    ? "pl-24 md:pl-0"
+                    : smallSidebar
                         ? "pl-24 md:pl-0"
                         : "pl-80 xl:pl-24 md:pl-0"
-                }`}
+                    }`}
             >
                 <LeftSidebar
                     value={visibleSidebar}
@@ -63,23 +65,31 @@ const Layout = ({
                     visibleRightSidebar={visibleRightSidebar}
                     smallSidebar={smallSidebar}
                 />
+                {
+                    showRightSideBar ? null :
+                        <div style={{ position: "absolute", top: 30, right: 30, zIndex: 100, cursor: "pointer", transform: "rotate(180deg)" }} onClick={() => setShowRightSidebar(!showRightSideBar)}>
+                            <Icon
+                                className="fill-n-4 transition-colors group-hover:fill-n-3"
+                                name={!showRightSideBar ? "toggle-on" : "toggle-off"}
+                                fill="#ffffff"
+                            />
+                        </div>
+                }
+
                 <div
-                    className={`flex py-6 md:py-0 ${
-                        hideRightSidebar
-                            ? "min-h-screen min-h-screen-ios"
-                            : "h-screen h-screen-ios"
-                    }`}
+                    className={`flex py-6 md:py-0 ${hideRightSidebar
+                        ? "min-h-screen min-h-screen-ios"
+                        : "h-screen h-screen-ios"
+                        }`}
                 >
                     <div
-                        className={`relative flex grow max-w-full bg-n-1 rounded-[1.25rem] md:rounded-none dark:bg-n-6 ${
-                            !hideRightSidebar &&
-                            "pr-[22.5rem] 2xl:pr-80 lg:pr-0"
-                        }`}
+                        className={`relative flex grow max-w-full bg-n-1 md:rounded-none dark:bg-n-6 ${!hideRightSidebar &&
+                            " 2xl:pr-80 lg:pr-0"
+                            }`}
                     >
                         <div
-                            className={`relative flex flex-col grow max-w-full ${
-                                !hideRightSidebar && "md:pt-18"
-                            }`}
+                            className={`relative flex flex-col grow max-w-full ${!hideRightSidebar && "md:pt-18"
+                                }`}
                         >
                             {!hideRightSidebar && (
                                 <Burger
@@ -107,21 +117,22 @@ const Layout = ({
                         {!hideRightSidebar && (
                             <RightSidebar
                                 className={`
-                                ${
-                                    !visibleSidebar &&
+                                ${!visibleSidebar &&
                                     "md:translate-x-64 md:before:absolute md:before:z-30 md:before:inset-0"
-                                }
+                                    }
                             `}
                                 visible={visibleRightSidebar}
+                                showRightSideBar={showRightSideBar}
+                                setShowRightSidebar={setShowRightSidebar}
+
                             />
                         )}
                     </div>
                 </div>
                 <div
                     className={twMerge(
-                        `fixed inset-0 z-10 bg-n-7/80 invisible opacity-0 md:hidden ${
-                            (!visibleSidebar && smallSidebar) ||
-                            (visibleRightSidebar && "visible opacity-100")
+                        `fixed inset-0 z-10 bg-n-7/80 invisible opacity-0 md:hidden ${(!visibleSidebar && smallSidebar) ||
+                        (visibleRightSidebar && "visible opacity-100")
                         }`
                     )}
                     onClick={handleClickOverlay}

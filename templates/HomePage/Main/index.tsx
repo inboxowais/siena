@@ -111,16 +111,22 @@ const Main = ({ }: MainProps) => {
                         </div>
 
                         <div className="w-6/12 pl-2 flex flex-col">
-                            <div className="w-full flex pb-2 bg-slate-100 " style={{ justifyContent: "space-between", alignItems: "start" }}>
+                            <div className="w-full flex pb-2 " style={{ justifyContent: "space-between", alignItems: "start" }}>
                                 <div className="font-bold text-xs p-2">
+                             
                                     Post , ask anything
+                                  
                                 </div>
                                 <div className="flex flex-wrap">
-                                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-xs m-1">For Personal</button>
-                                    <button className="bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Work</button>
-                                    <button className="bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Creation</button>
-                                    <button className="bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Research</button>
-                                    <button className="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-xs m-1">Share Post</button>
+                                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-xs m-1">
+                                        <Link href="#">
+                                        For Personal
+                                        </Link>
+                                        </button>
+                                    <button className="bg-blue-400 bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Work</button>
+                                    <button className="bg-blue-400 bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Creation</button>
+                                    <button className="bg-blue-400 bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Research</button>
+                                    <button className="bg-blue-700 bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-xs m-1">Share Post</button>
                                 </div>
                             </div>
                             <Field
@@ -146,7 +152,7 @@ const Main = ({ }: MainProps) => {
                                 <div className="flex" style={{ alignItems: "center" }}>
                                     <Icon
                                         name={"dots"}
-                                        fill="#000000"
+                                        className="w-5 h-5 fill-n-7 transition-colors group-hover:fill-primary-1 dark:fill-n-1"
                                         size={10}
                                     />
                                     <div className="text-xs pl-2">
@@ -158,7 +164,7 @@ const Main = ({ }: MainProps) => {
                                 <div className="flex" style={{ alignItems: "center" }}>
                                     <Icon
                                         name={"users-plus"}
-                                        fill="#000000"
+                                        className="w-5 h-5 fill-n-7 transition-colors group-hover:fill-primary-1 dark:fill-n-1"
                                         size={10}
                                     />
                                     <div className="text-xs pl-2">
@@ -170,7 +176,7 @@ const Main = ({ }: MainProps) => {
                                 <div className="flex" style={{ alignItems: "center" }}>
                                     <Icon
                                         name={"calendar"}
-                                        fill="#000000"
+                                        className="w-5 h-5 fill-n-7 transition-colors group-hover:fill-primary-1 dark:fill-n-1"
                                         size={10}
                                     />
                                     <div className="text-xs pl-2">
@@ -182,7 +188,7 @@ const Main = ({ }: MainProps) => {
                                 <div className="flex" style={{ alignItems: "center" }}>
                                     <Icon
                                         name={"clock"}
-                                        fill="#000000"
+                                        className="w-5 h-5 fill-n-7 transition-colors group-hover:fill-primary-1 dark:fill-n-1"
                                         size={10}
                                     />
                                     <div className="text-xs pl-2">
@@ -194,7 +200,7 @@ const Main = ({ }: MainProps) => {
                                 <div className="flex" style={{ alignItems: "center" }}>
                                     <Icon
                                         name={"profile"}
-                                        fill="#000000"
+                                        className="w-5 h-5 fill-n-7 transition-colors group-hover:fill-primary-1 dark:fill-n-1"
                                         size={10}
                                     />
                                     <div className="text-xs pl-2">
@@ -206,7 +212,7 @@ const Main = ({ }: MainProps) => {
                                 <div className="flex" style={{ alignItems: "center" }}>
                                     <Icon
                                         name={"sun"}
-                                        fill="#000000"
+                                        className="w-5 h-5 fill-n-7 transition-colors group-hover:fill-primary-1 dark:fill-n-1"
                                         size={10}
                                     />
                                     <div className="text-xs pl-2">
@@ -218,7 +224,7 @@ const Main = ({ }: MainProps) => {
                                 <div className="flex" style={{ alignItems: "center" }}>
                                     <Icon
                                         name={"card"}
-                                        fill="#000000"
+                                        className="w-5 h-5 fill-n-7 transition-colors group-hover:fill-primary-1 dark:fill-n-1"
                                         size={10}
                                     />
                                     <div className="text-xs pl-2">

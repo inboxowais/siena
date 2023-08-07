@@ -9,7 +9,7 @@ body {
 }
 
 .f-card {
-  background-color:white;
+  /* background-color:white; */
   /*height:400px;*/
   width:502px;
   border: 1px solid #d0d1d5;
@@ -139,7 +139,7 @@ body {
   font-weight:bold;
   line-height:14px;
   
-  border-top:1px solid #e5e5e5;
+  /* border-top:1px solid #e5e5e5; */
   padding-top:4px;
   
 }

@@ -16,9 +16,11 @@ import { chatHistory } from "@/mocks/chatHistory";
 type RightSidebarProps = {
     className?: string;
     visible?: boolean;
+    setShowRightSidebar?:Function;
+    showRightSideBar?:boolean;
 };
 
-const RightSidebar = ({ className, visible }: RightSidebarProps) => {
+const RightSidebar = ({ className, visible,showRightSideBar,setShowRightSidebar }: RightSidebarProps) => {
     const [clean, setClean] = useState<boolean>(false);
     const [visibleModal, setVisibleModal] = useState<boolean>(false);
 
@@ -30,12 +32,20 @@ const RightSidebar = ({ className, visible }: RightSidebarProps) => {
     return (
         <>
             <div
+                style={{visibility:!showRightSideBar ? "hidden" : "unset"}}
                 className={twMerge(
                     `absolute top-0 right-0 bottom-0 flex flex-col w-[22.5rem] pt-[8rem] pb-24 bg-n-1 rounded-r-[1.25rem] border-l border-n-3 shadow-[inset_0_1.5rem_3.75rem_rgba(0,0,0,0.1)] 2xl:w-80 lg:rounded-[1.25rem] lg:invisible lg:opacity-0 lg:transition-opacity lg:z-20 lg:border-l-0 lg:shadow-2xl md:fixed md:w-[calc(100%-4rem)] md:border-l md:rounded-none dark:bg-n-6 dark:border-n-5 ${
                         visible && "lg:visible lg:opacity-100"
                     } ${className}`
                 )}
             >
+                <div style={{ position: "absolute", top: 10, left: 10, zIndex: 100, cursor: "pointer" }} onClick={() => setShowRightSidebar(!showRightSideBar)}>
+                    <Icon
+                        className="fill-n-4 transition-colors group-hover:fill-n-3"
+                        name={showRightSideBar ? "toggle-on" : "toggle-off"}
+                        fill="#000000"
+                    />
+                </div>
                 <div className="absolute top-0 left-0 right-0 flex justify-end items-center h-18 px-9 border-b border-n-3 lg:pr-18 md:pr-16 dark:border-n-5">
                     <Notifications items={notifications} />
                     <Profile />
@@ -89,7 +99,7 @@ const RightSidebar = ({ className, visible }: RightSidebarProps) => {
                                 className="w-5 h-5 fill-n-4 transition-colors group-hover:fill-accent-1"
                                 name="trash"
                             />
-                            <div className="absolute min-w-[8rem] top-1/2 -translate-y-1/2 right-full mr-2 px-2 py-1 rounded-lg bg-n-7 caption1 text-n-1 invisible opacity-0 transition-opacity pointer-events-none lg:hidden after:absolute after:top-1/2 after:left-full after:-translate-y-1/2 after:w-0 after:h-0 after:border-t-4 after:border-l-4 after:border-b-4 after:border-r-4 after:border-r-transparent after:border-l-n-7 after:border-t-transparent after:border-b-transparent group-hover:opacity-100 group-hover:visible">
+                            <div className="absolute min-w-[8rem] top-1/2 -translate-y-1/2 right-full mr-2 px-2 py-1 rounded-lg bg-n-7 caption1 text-n-1 invisible opacity-0 transition-opacity pointer-events-none lg:hidden after:absolute after:top-1/2 after:left-full after:-translate-y-1/2 after:w-0 after:h-0 after:border-t-4    after:border-r-transparent after:border-l-n-7 after:border-t-transparent after:border-b-transparent group-hover:opacity-100 group-hover:visible">
                                 Clear chat history
                             </div>
                         </button>
