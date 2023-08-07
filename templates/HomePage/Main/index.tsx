@@ -123,9 +123,9 @@ const Main = ({ }: MainProps) => {
                                         For Personal
                                         </Link>
                                         </button>
-                                    <button className="bg-blue-400 bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Work</button>
-                                    <button className="bg-blue-400 bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Creation</button>
-                                    <button className="bg-blue-400 bg-white hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Research</button>
+                                    <button className="bg-blue-400  hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Work</button>
+                                    <button className="bg-blue-400  hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Creation</button>
+                                    <button className="bg-blue-400  hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded-full text-xs m-1">For Research</button>
                                     <button className="bg-blue-700 bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-xs m-1">Share Post</button>
                                 </div>
                             </div>
