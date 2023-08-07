@@ -16,7 +16,7 @@ import { chatHistory } from "@/mocks/chatHistory";
 type RightSidebarProps = {
     className?: string;
     visible?: boolean;
-    setShowRightSidebar?: (value: boolean) => void;
+    setShowRightSidebar?: (value: boolean) => undefined;
     showRightSideBar?:boolean;
 };
 
@@ -29,6 +29,14 @@ const RightSidebar = ({ className, visible,showRightSideBar,setShowRightSidebar 
         toast.dismiss(t.id);
     };
 
+
+
+    const onClick = () => {
+        if(setShowRightSidebar) {
+            setShowRightSidebar(!showRightSideBar)
+        }
+    }
+
     return (
         <>
             <div
@@ -39,7 +47,7 @@ const RightSidebar = ({ className, visible,showRightSideBar,setShowRightSidebar 
                     } ${className}`
                 )}
             >
-                <div style={{ position: "absolute", top: 10, left: 10, zIndex: 100, cursor: "pointer" }} onClick={() => setShowRightSidebar(!showRightSideBar)}>
+                <div style={{ position: "absolute", top: 10, left: 10, zIndex: 100, cursor: "pointer" }} onClick={onClick}>
                     <Icon
                         className="fill-n-4 transition-colors group-hover:fill-n-3"
                         name={showRightSideBar ? "toggle-on" : "toggle-off"}
