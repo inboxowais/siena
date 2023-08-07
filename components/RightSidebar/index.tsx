@@ -16,7 +16,7 @@ import { chatHistory } from "@/mocks/chatHistory";
 type RightSidebarProps = {
     className?: string;
     visible?: boolean;
-    setShowRightSidebar?: (value: boolean) => undefined;
+    setShowRightSidebar?: (value: boolean) => void;
     showRightSideBar?:boolean;
 };
 
