@@ -83,7 +83,7 @@ const Layout = ({
                 >
                     <div
                         className={`relative flex grow max-w-full bg-n-1 md:rounded-none dark:bg-n-6 ${!hideRightSidebar &&
-                            " 2xl:pr-80 lg:pr-0"
+                            ""
                             }`}
                     >
                         <div
